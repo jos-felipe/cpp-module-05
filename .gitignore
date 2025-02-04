@@ -1,5 +1,6 @@
 # My personal options
 *.pdf
+.vscode
 
 # Prerequisites
 *.d
