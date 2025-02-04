@@ -6,7 +6,7 @@
 /*   By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 10:08:29 by josfelip          #+#    #+#             */
-/*   Updated: 2025/02/04 11:27:34 by josfelip         ###   ########.fr       */
+/*   Updated: 2025/02/04 11:42:00 by josfelip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void Bureaucrat::decrementGrade()
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 {
-	out << bureaucrat.getName() << ", \
-		bureaucrat grade " << bureaucrat.getGrade();
+	out << bureaucrat.getName() << ", bureaucrat grade " 
+	<< bureaucrat.getGrade();
 	return (out);
 }
