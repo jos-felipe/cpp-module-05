@@ -6,7 +6,7 @@
 /*   By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:30:53 by josfelip          #+#    #+#             */
-/*   Updated: 2025/02/04 17:55:09 by josfelip         ###   ########.fr       */
+/*   Updated: 2025/02/04 17:52:35 by josfelip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,13 @@ int main(void)
         ShrubberyCreationForm shrub("garden");
         std::cout << shrub << std::endl;
         
-        // Intern should be able to sign but not execute
+        // Intern shouldn't be able to sign
         intern.signForm(shrub);
         intern.executeForm(shrub);  // Should fail
         
-        // Clerk should be able to execute
-        supervisor.executeForm(shrub);  // Should succeed
+        // Clerk should be able to sign and execute
+        supervisor.signForm(shrub);
+		supervisor.executeForm(shrub);  // Should succeed
 
         // Test RobotomyRequestForm (sign: 72, exec: 45)
         printHeader("Testing RobotomyRequestForm");
