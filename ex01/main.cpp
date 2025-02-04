@@ -5,40 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 11:31:53 by josfelip          #+#    #+#             */
-/*   Updated: 2025/02/04 11:33:22 by josfelip         ###   ########.fr       */
+/*   Created: 2025/02/04 12:40:53 by josfelip          #+#    #+#             */
+/*   Updated: 2025/02/04 13:14:09 by josfelip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-int	main(void)
+int main(void)
 {
-	try
-	{
-		// Test normal case
-		Bureaucrat normal("John", 75);
-		std::cout << normal << std::endl;
-		// Test increment/decrement
-		normal.incrementGrade();
-		std::cout << "After increment: " << normal << std::endl;
-		normal.decrementGrade();
-		std::cout << "After decrement: " << normal << std::endl;
-		// Test grade too high
-		Bureaucrat high("High", 0);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "Exception caught: " << e.what() << std::endl;
-	}
-	try
-	{
-		// Test grade too low
-		Bureaucrat low("Low", 151);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "Exception caught: " << e.what() << std::endl;
-	}
-	return (0);
+    try
+    {
+        // Create a bureaucrat and a form
+        Bureaucrat bob("Bob", 100);
+        Form form1("Tax Form", 90, 100);
+        
+        // Print initial state
+        std::cout << "Initial state:" << std::endl;
+        std::cout << bob << std::endl;
+        std::cout << form1 << std::endl << std::endl;
+        
+        // Try to sign the form (should fail - grade too low)
+        bob.signForm(form1);
+        std::cout << std::endl;
+        
+        // Promote Bob and try again
+        for (int i = 0; i < 15; i++)
+            bob.incrementGrade();
+        
+        std::cout << "After promotion:" << std::endl;
+        std::cout << bob << std::endl << std::endl;
+        
+        // Try to sign again (should succeed)
+        bob.signForm(form1);
+        std::cout << std::endl << form1 << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << "Exception caught: " << e.what() << std::endl;
+    }
+    
+    return (0);
 }

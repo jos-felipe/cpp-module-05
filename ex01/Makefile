@@ -6,7 +6,7 @@
 #    By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/04 11:35:20 by josfelip          #+#    #+#              #
-#    Updated: 2025/02/04 11:44:30 by josfelip         ###   ########.fr        #
+#    Updated: 2025/02/04 13:11:00 by josfelip         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= bureaucrat.out
 CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 
-SRCS		= main.cpp Bureaucrat.cpp
+SRCS		= main.cpp Bureaucrat.cpp Form.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 all:		$(NAME)
