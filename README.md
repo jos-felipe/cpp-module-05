@@ -54,6 +54,12 @@ try {
 }
 ```
 
+## Requirements
+
+   - C++ compiler (supporting C++98)
+   - Make
+   - Standard Library
+
 ## Building and Testing
 
 ```bash
@@ -69,6 +75,18 @@ make fclean
 # Rebuild
 make re
 ```
+
+Expected Output:
+You should see a series of tests demonstrating different aspects of the bureaucratic system:
+1. Creation of bureaucrats with different grades
+2. Form signing attempts (both successful and failed)
+3. Form execution attempts
+4. Exception handling demonstrations
+
+The program creates various output files during execution:
+- `*_shrubbery` files containing ASCII trees
+- Console output showing form processing results
+- Error messages for invalid operations
 
 ## Usage Example
 
